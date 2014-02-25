@@ -39,6 +39,8 @@
             position: routeInfo.steps[rep].start_point,
             map: map
           });
+          var stepPath = google.maps.geometry.encoding.decodePath(step[rep].encoded_lat_lngs);
+          if(rep===0) console.log(stepPath);
           attachMarkerData(marker, routeInfo.steps[rep]);
           markerSet[rep] = marker;
         }
